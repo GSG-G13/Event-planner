@@ -1,32 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Add Event</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Events planner</title>
   </head>
   <body>
-    <header>
-      <h1>Add Event</h1>
-    </header>
-    <main>
-        <label for="event-name">Event Name</label>
-        <input type="text" id="event-name" name="event-name" required>
-
-        <label for="event-location">Event Location</label>
-        <input type="text" id="location" name="event-location" required>
-
-        <label for="event-date">Event Date</label>
-        <input type="date" id="event-date" name="event-date" required>
-
-
-        <label for="event-details">Event details</label>
-        <textarea id="event-details" name="event-details" rows="5" required></textarea>
-
-        <button type="submit" id="add-event">Add Event</button>
-    </main>
-    <script src="js/dom.js"></script>
-    <script src="js/index.js"></script>
+    <div class="main-container">
+      <div class="circles">
+        <div class="circle-one"></div>
+        <div class="circle-two"></div>
+        <div class="circle-three"></div>
+      </div>
+    <div class="hero">
+      <div class="hero-description">
+        <h1>
+          schedule events <br />
+          easily!
+        </h1>
+        <p>
+          We are here to help you organize <br />
+          your events in a simple way, so <br />
+          join us!
+        </p>
+        <div class="add-event">
+          <a href="./html/login.html"> schedule Event </a>
+        </div>
+      </div>
+      <div class="hero-picture">
+        <img src="./images/hero.png" alt="hero" />
+      </div>
+    </div>
   </body>
 </html>

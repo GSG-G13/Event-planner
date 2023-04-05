@@ -1,11 +1,12 @@
-const { insertEvent } = require('../../db/query/postData')
+// const { insertEvent } = require('../../db/query/postData')
+const { insertEvent } = require('../../db/index')
 
 const addEvent = (req, res, next) => {
     const { eventName, location, data, details } = req.body;
     insertEvent({ eventName, location, data, details })
         .then((data) => {
             if (data) {
-                res.json({
+                return res.json({
                     status: 201,
                     msg: 'user created successfully',
                     data: data.rows[0],

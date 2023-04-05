@@ -1,4 +1,5 @@
-const { insertUser } = require('../../db/query/postData')
+// const { insertUser } = require('../../db/query/postData')
+const {insertUser} = require('../../db/index')
 
 const addUser = (req, res, next) => {
     const { username, password } = req.body
@@ -17,9 +18,9 @@ const addUser = (req, res, next) => {
                 })
             }
         })
-        .catch((e) => {
-            next(e)
-        })
+        // .catch((e) => {
+        //     next(e)
+        // })
 }
 
 module.exports = { addUser }

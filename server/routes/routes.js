@@ -1,12 +1,10 @@
-const getEvents = require("../controllers/Events/getEvent");
-const { addEvent } = require("../controllers/Events/addEvent");
-const { addUser } = require("../controllers/Users/addUser");
+const {getAllEvents, addEvent, addUser} = require('../controllers/index')
 const router = require("express").Router();
 
 router.get("/", (req, res) => {
   res.send("Hello");
 });
-router.get("/events", getEvents);
+router.get("/events", getAllEvents);
 router.post("/users", addUser);
 router.post("/event", addEvent);
 module.exports = router;

@@ -7,6 +7,7 @@ CREATE TABLE users (
     password TEXT NOT NULL
 );
 
+
 CREATE TABLE events(
     id SERIAL PRIMARY KEY, 
     event_name  VARCHAR(255),

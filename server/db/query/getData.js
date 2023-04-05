@@ -7,4 +7,4 @@ const getEvents = () => {
   return connection.query(sql);
 };
 
-module.exports = getEvents;
+module.exports = {getEvents};

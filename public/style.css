@@ -63,26 +63,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  z-index: 1;
 }
 
 .hero-description h1 {
   font-weight: 700;
-  font-size: 48px;
+  font-size: 32px;
   background: linear-gradient(90deg, #9b77e7 0%, #1600a0 81.44%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.hero-description p {
-  font-family: "Poppins";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  color: #747474;
-}
-
 .hero-picture {
-  width: 50%;
+  width: 45%;
   z-index: 1;
 }
 
@@ -90,23 +83,43 @@ body {
   width: 100%;
 }
 
-.add-event a {
-  width: 228px;
-  height: 81px;
-  font-size: 24px;
-  color: white;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  font-family: Poppins;
-  font-weight: SemiBold;
-  background: linear-gradient(90deg, #9b77e7 0%, #1600a0 81.44%);
-  border: none;
+.login-wrap {
+  background-color: #bababe;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+  z-index: 1;
 }
 
-/* Styles for the header */
+.login-wrap h2 {
+  font-weight: 700;
+  font-size: 30px;
+  text-align: center;
+  padding: 12px;
+  background: linear-gradient(90deg, #9b77e7 0%, #1600a0 81.44%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 18px;
+  gap: 12px;
+}
+
+.form input {
+  border: none;
+  border-bottom: 2px solid #D1D1D4;
+  background-color: #ffffff;
+  padding: 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 100%;
+
+}
+
+/* admin page style */
 header {
   background: linear-gradient(135deg, #a5a4d4, #f7b4cf);
   color: #fff;
@@ -139,6 +152,7 @@ label {
 
 /* Styles for the input fields */
 input[type="text"],
+input[type="password"],
 input[type="date"],
 input[type="time"],
 textarea {
@@ -175,134 +189,4 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background: linear-gradient(135deg, #8e89c1, #e98bae);
-}
-
-.login-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-.screen {
-  background: linear-gradient(90deg, #5D54A4, #7C78B8);
-  position: relative;
-  height: 600px;
-  width: 360px;
-  box-shadow: 0px 0px 24px #5C5696;
-}
-
-.screen__content {
-  z-index: 1;
-  position: relative;
-  height: 100%;
-}
-
-.screen__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  -webkit-clip-path: inset(0 0 0 0);
-  clip-path: inset(0 0 0 0);
-}
-
-.screen__background__shape {
-  transform: rotate(45deg);
-  position: absolute;
-}
-
-.screen__background__shape1 {
-  height: 520px;
-  width: 520px;
-  background: #FFF;
-  top: -50px;
-  right: 120px;
-  border-radius: 0 72px 0 0;
-}
-
-.screen__background__shape2 {
-  height: 220px;
-  width: 220px;
-  background: #6C63AC;
-  top: -172px;
-  right: 0;
-  border-radius: 32px;
-}
-
-.screen__background__shape3 {
-  height: 540px;
-  width: 190px;
-  background: linear-gradient(270deg, #5D54A4, #6A679E);
-  top: -24px;
-  right: 0;
-  border-radius: 32px;
-}
-
-.screen__background__shape4 {
-  height: 400px;
-  width: 200px;
-  background: #7E7BB9;
-  top: 420px;
-  right: 50px;
-  border-radius: 60px;
-}
-
-.login {
-  width: 320px;
-  padding: 30px;
-  padding-top: 156px;
-}
-
-.login-field {
-  padding: 20px 0px;
-  position: relative;
-}
-
-.login-input {
-  border: none;
-  border-bottom: 2px solid #D1D1D4;
-  background-color: #636161;
-  background: none;
-  padding: 10px;
-  padding-left: 24px;
-  font-weight: 700;
-  width: 100%;
-  transition: .2s;
-
-}
-
-.login-input:active,
-.login-input:focus,
-.login-input:hover {
-  outline: none;
-  border-bottom-color: #6A679E;
-}
-
-.login-submit {
-  background: #fff;
-  font-size: 14px;
-  margin-top: 30px;
-  padding: 16px 20px;
-  border-radius: 26px;
-  border: 1px solid #D4D3E8;
-  text-transform: uppercase;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  color: #4C489D;
-  box-shadow: 0px 2px 2px #5C5696;
-  cursor: pointer;
-  transition: .2s;
-}
-
-.login-submit:active,
-.login-submit:focus,
-.login-submit:hover {
-  border-color: #6A679E;
-  outline: none;
 }

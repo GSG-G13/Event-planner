@@ -1,5 +1,4 @@
-const getEvents = require("../db/query/getEvent");
-
+const getEvents = require("../../db/query/getData");
 const getAllEvents = (req, res) => {
   getEvents()
     .then((data) => res.json(data.rows))

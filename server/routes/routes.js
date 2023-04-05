@@ -1,6 +1,11 @@
-const router = require('express').Router();
+const getEvents = require("../controllers/inedx");
 
-router.get('/', (req, res) => {
-    res.send('Hello');
-})
+const router = require("express").Router();
+
+router.get("/", (req, res) => {
+  res.send("Hello");
+});
+
+router.get("/events", getEvents);
+
 module.exports = router;

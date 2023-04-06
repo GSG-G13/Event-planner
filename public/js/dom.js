@@ -17,25 +17,25 @@ const appendChildren = (parent, ...children) => {
   });
 };
 
-const createEventCard = (title, details, link) => {
-  const card = createHtmlElement("div", "card");
-  const cardImage = createHtmlElement("div", "card-image");
-  const img = createHtmlElement("img");
-  img.setAttribute("src", "../images/hero.png");
-  cardImage.appendChild(img);
-  const cardContent = createHtmlElement("div", "card-content");
-  const h3EventTitle = createHtmlElement("h3");
-  h3EventTitle.textContent = title;
-  const pDes = createHtmlElement("p");
-  pDes.textContent = details;
-  const registerToEvent = createHtmlElement("a", "button");
-  registerToEvent.textContent = "Register Now";
-  registerToEvent.setAttribute("href", link);
-  appendChildren(cardContent, h3EventTitle, pDes, registerToEvent);
-  appendChildren(card, cardImage, cardContent);
-  cards.append(card);
-};
+// const createEventCard = ({ id, evnet_name, location, date, details }) => {
+//   const card = createHtmlElement("div", "card");
+//   const cardImage = createHtmlElement("div", "card-image");
+//   const img = createHtmlElement("img");
+//   img.setAttribute("src", "../images/hero.png");
+//   cardImage.appendChild(img);
+//   const cardContent = createHtmlElement("div", "card-content");
+//   const h3EventTitle = createHtmlElement("h3");
+//   h3EventTitle.textContent = title;
+//   const pDes = createHtmlElement("p");
+//   pDes.textContent = details;
+//   const registerToEvent = createHtmlElement("a", "button");
+//   registerToEvent.textContent = "Register Now";
+//   registerToEvent.setAttribute("href", link);
+//   appendChildren(cardContent, h3EventTitle, pDes, registerToEvent);
+//   appendChildren(card, cardImage, cardContent);
+//   cards.append(card);
+// };
 
-for (let i = 0; i < 5; i++) {
-  createEventCard();
-}
+// for (let i = 0; i < 5; i++) {
+//   createEventCard();
+// }

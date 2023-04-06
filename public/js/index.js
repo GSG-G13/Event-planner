@@ -18,4 +18,10 @@ btnAddEvent.addEventListener("click", () => {
     });
 });
 
-fetch("/event/update", updateEvent).then(console.log);
+// fetch("/event").then().then(console.log);
+
+const fetchEvents = () => {
+  return fetch("/events")
+    .then((result) => result.json())
+    .then((data) => createEventCard(data));
+};

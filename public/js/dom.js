@@ -1,8 +1,10 @@
+const cards = document.querySelector(".cards");
 const eventNameInput = document.getElementById("event-name");
 const locationInput = document.getElementById("location");
 const eventDateInput = document.getElementById("event-date");
 const eventDetails = document.getElementById("event-details");
 const btnAddEvent = document.getElementById("add-event");
+const btnShowEvent = document.getElementById("show-events");
 const userNameInput = document.getElementById("user-name");
 const passwordInput = document.getElementById("password");
 const signInBtn = document.getElementById("sign-in");
@@ -20,25 +22,31 @@ const appendChildren = (parent, ...children) => {
   });
 };
 
-// const createEventCard = ({ id, evnet_name, location, date, details }) => {
-//   const card = createHtmlElement("div", "card");
-//   const cardImage = createHtmlElement("div", "card-image");
-//   const img = createHtmlElement("img");
-//   img.setAttribute("src", "../images/hero.png");
-//   cardImage.appendChild(img);
-//   const cardContent = createHtmlElement("div", "card-content");
-//   const h3EventTitle = createHtmlElement("h3");
-//   h3EventTitle.textContent = title;
-//   const pDes = createHtmlElement("p");
-//   pDes.textContent = details;
-//   const registerToEvent = createHtmlElement("a", "button");
-//   registerToEvent.textContent = "Register Now";
-//   registerToEvent.setAttribute("href", link);
-//   appendChildren(cardContent, h3EventTitle, pDes, registerToEvent);
-//   appendChildren(card, cardImage, cardContent);
-//   cards.append(card);
-// };
-
-// for (let i = 0; i < 5; i++) {
-//   createEventCard();
-// }
+const createEventCard = ({ event_name, location, date, details }) => {
+  const card = createHtmlElement("div", "card");
+  const cardImage = createHtmlElement("div", "card-image");
+  const img = createHtmlElement("img");
+  img.setAttribute("src", "../images/hero.png");
+  cardImage.appendChild(img);
+  const cardContent = createHtmlElement("div", "card-content");
+  const h3EventTitle = createHtmlElement("h3");
+  h3EventTitle.textContent = event_name;
+  const titleDateContainer = createHtmlElement("div", "title-date");
+  const eventDate = createHtmlElement("span", "event-date");
+  eventDate.textContent = date;
+  const pDes = createHtmlElement("p");
+  const eventLocation = createHtmlElement("p");
+  eventLocation.textContent = location;
+  cardContent.append(eventLocation);
+  pDes.textContent = details;
+  titleDateContainer.append(h3EventTitle);
+  titleDateContainer.append(date);
+  const registerToEvent = createHtmlElement("a", "button");
+  registerToEvent.textContent = "Register Now";
+  // registerToEvent.setAttribute("href", link);
+  // registerToEvent.setAttribute("value", id);
+  appendChildren(cardContent, h3EventTitle, pDes, registerToEvent);
+  appendChildren(card, cardImage, cardContent);
+  cards.append(card);
+  return card;
+};

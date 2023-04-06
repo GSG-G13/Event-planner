@@ -6,31 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../style/admin.css" />
   </head>
+
   <body>
     <header>
       <h1>Add Event</h1>
     </header>
     <main>
-      <form action="#" method="post">
-        <label for="event-name">Event Name</label>
-        <input type="text" id="event-name" name="event-name" required />
+      <label for="event-name">Event Name</label>
+      <input type="text" id="event-name" name="event-name" required />
 
-        <label for="event-date">Event Date</label>
-        <input type="date" id="event-date" name="event-date" required />
+      <label for="event-location">Event Location</label>
+      <input type="text" id="location" name="event-location" required />
 
-        <label for="event-time">Event Time</label>
-        <input type="time" id="event-time" name="event-time" required />
+      <label for="event-date">Event Date</label>
+      <input type="date" id="event-date" name="event-date" required />
 
-        <label for="event-description">Event Description</label>
-        <textarea
-          id="event-description"
-          name="event-description"
-          rows="5"
-          required
-        ></textarea>
+      <label for="event-details">Event details</label>
+      <textarea
+        id="event-details"
+        name="event-details"
+        rows="5"
+        required
+      ></textarea>
 
-        <button type="submit">Add Event</button>
-      </form>
+      <button type="submit" id="add-event">Add Event</button>
     </main>
+    <script src="/js/dom.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>

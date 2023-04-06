@@ -18,8 +18,6 @@ btnAddEvent.addEventListener("click", () => {
     });
 });
 
-// fetch("/event").then().then(console.log);
-
 const fetchEvents = () => {
   return fetch("/events")
     .then((result) => result.json())

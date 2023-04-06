@@ -12,5 +12,4 @@ router.get("/", (req, res) => {
 router.get("/events", getAllEvents);
 router.post("/users", addUser);
 router.post("/event", addEvent);
-// router.post("/event/update", updateEvent);
 module.exports = router;

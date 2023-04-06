@@ -25,5 +25,13 @@ btnAddEvent.addEventListener("click", () => {
     .catch((err) => {
       console.log(err);
     });
+    eventNameInput.value  = ''
+    locationInput.value = ''
+    eventDateInput.value = ''
+    eventDetails.value = ''
+    toast.classList.add("show");
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 2000);
 });
 

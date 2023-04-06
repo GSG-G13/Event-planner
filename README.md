@@ -13,8 +13,6 @@ This app allows users to create and manage events. Users can create new events b
     * I can request to attend to event
 
 ## ✧ We are start the project with this Database Schema
-test
-![](https://www.flickr.com/photos/198067871@N06/shares/85sP68GVJ3)
 
 ![Database Diagram](public/images/drawSQL-event-planner-export-2023-04-06.png)
 

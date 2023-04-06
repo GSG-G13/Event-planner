@@ -3,10 +3,22 @@
     outline: none;
 }
 
+h1 {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    padding: 12px;
+    background: linear-gradient(90deg, #9b77e7 0%, #1600a0 81.44%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
 .cards {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px;
 }
 
 .card {

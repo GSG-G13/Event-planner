@@ -1,12 +1,12 @@
-const fetchEvents = () => {
-  return fetch("/events")
-    .then((result) => result.json())
-    .then((data) => {
-      data.forEach((element) => {
-        createEventCard(element);
-      });
-    });
-};
+// const fetchEvents = () => {
+//   return fetch("/events")
+//     .then((result) => result.json())
+//     .then((data) => {
+//       data.forEach((element) => {
+//         createEventCard(element);
+//       });
+//     });
+// };
 btnAddEvent.addEventListener("click", () => {
   const requestOption = {
     method: "POST",
@@ -26,4 +26,4 @@ btnAddEvent.addEventListener("click", () => {
       console.log(err);
     });
 });
-btnShowEvent.addEventListener("click", fetchEvents);
+

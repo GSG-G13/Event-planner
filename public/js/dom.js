@@ -37,5 +37,5 @@ const createEventCard = (title, details, link) => {
 };
 
 for (let i = 0; i < 5; i++) {
-  createEventCard("test", "test", "https://www.google.com/");
+  createEventCard();
 }

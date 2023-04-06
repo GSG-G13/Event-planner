@@ -1,4 +1,9 @@
-const { getAllEvents, addEvent, addUser } = require("../controllers/index");
+const {
+  getAllEvents,
+  addEvent,
+  addUser,
+  updateEvent,
+} = require("../controllers/index");
 const router = require("express").Router();
 
 router.get("/", (req, res) => {

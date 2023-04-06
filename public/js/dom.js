@@ -3,7 +3,10 @@ const locationInput = document.getElementById("location");
 const eventDateInput = document.getElementById("event-date");
 const eventDetails = document.getElementById("event-details");
 const btnAddEvent = document.getElementById("add-event");
-const cards = document.querySelector(".cards");
+const userNameInput = document.getElementById("user-name");
+const passwordInput = document.getElementById("password");
+const signInBtn = document.getElementById("sign-in");
+const toast = document.querySelector(".toast");
 
 const createHtmlElement = (element, className, id) => {
   const ele = document.createElement(element);

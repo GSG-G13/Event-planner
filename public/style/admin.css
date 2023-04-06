@@ -65,6 +65,12 @@ a[type="submit"] {
     letter-spacing: 2px;
 }
 
+.add-show-btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 button[type="submit"]:hover {
     background: linear-gradient(135deg, #b6b3d6, #c48299);
 }

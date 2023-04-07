@@ -1,12 +1,3 @@
-// const fetchEvents = () => {
-//   return fetch("/events")
-//     .then((result) => result.json())
-//     .then((data) => {
-//       data.forEach((element) => {
-//         createEventCard(element);
-//       });
-//     });
-// };
 btnAddEvent.addEventListener("click", () => {
   const requestOption = {
     method: "POST",

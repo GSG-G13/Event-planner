@@ -3,9 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const signInBtn = document.getElementById('sign-in');
     const usernameInput = document.getElementById('user-name');
     const passwordInput = document.getElementById('password');
-    const toast = document.querySelector('.toast')
+    const toast = document.querySelector('.toast');
     let eventId = null;
-
     fetch("/events")
         .then((result) => result.json())
         .then((data) => {
@@ -17,7 +16,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 form.classList.add('show')
                })
             })
-        });
+            return 'eventId'
+        })
+        .then(() => {
+            const cardsElements = document.querySelectorAll('.card-content');
+            cardsElements.forEach((card) => {
+                card.addEventListener('click',() => {
+                        fetch('/getAttendee',{
+                        method : 'POST',
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({
+                            eventId: card.lastChild.id
+                        })
+                    })
+                    .then((result) => result.json())
+                    .then((result) => {
+                        let ol = listOfNames(result['result'])
+                        document.body.append(ol)
+                    } )
+                })
+            })
+        })
 
         signInBtn.addEventListener('click',() => {
             fetch('/login',{
@@ -52,10 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
                     console.log('HEllo')
                 }
             })   
-        
-
-
-
         })
 
 })

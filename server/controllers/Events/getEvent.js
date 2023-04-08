@@ -1,4 +1,3 @@
-// const getEvents = require("../../db/query/getData");
 const {getEvents} = require('../../db/index')
 
 const getAllEvents = (req, res) => {

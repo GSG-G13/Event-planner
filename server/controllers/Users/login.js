@@ -1,25 +1,32 @@
-const {getUserFromDataBase} = require('../../db/index')
+const { getUser, addAttendee } = require('../../db/index')
 
 const login = (req,res) => {
-    const {username, password} = req.body
-    getUserFromDataBase(username)
+    const {username, password, eventId} = req.body
+    getUser(username)
     .then((result) => {
-        if(result.rows[0]['name'] === username && result.rows[0]['password'] === password){      
-            return res.json({
-                result: result.rows[0]['name']
+        if(result.rows.length <= 0){
+             return res.json({
+                massage:'user does not exit'
             })
         }else{
-            return res.json({
-                massage : "password is wrong"
+            result.rows.forEach((user) => {
+                if(user.name === username && user.password === password){
+                    addAttendee(user.id, eventId).then(() => {
+                        return res.json({
+                             id : user.id,
+                             name : user.name,
+                             password : user.password,
+                             eventId : `${eventId}`
+                    })
+                    })
+                }else{
+                     return res.json({
+                        massage : 'password or username is wrong'
+                    })
+                }
             })
         }
-        
     })
-    .catch((err) => {
-        res.json({
-            massage:'user does not exit'
-        })
-        console.log(err)
-    })
+    .catch((e) =>  res.json({massage : "error happen"}))
 }
 module.exports = {login}

@@ -1,6 +1,6 @@
 const connection = require('../config/connection');
 
-const getUserFromDataBase = (username) => {
+const getUser = (username) => {
     const sql = {
         text: "select * from users where name = ($1)",
         values: [username]
@@ -8,5 +8,5 @@ const getUserFromDataBase = (username) => {
     return connection.query(sql)
 }
 
-module.exports = {getUserFromDataBase}
+module.exports = {getUser}
 

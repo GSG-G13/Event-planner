@@ -1,4 +1,5 @@
 const { getAttendees } = require('../../db/index');
+
 const getAttendee = (req, res) => {
     const { eventId } = req.body
     console.log(eventId)

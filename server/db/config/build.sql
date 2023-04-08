@@ -33,13 +33,16 @@ INSERT INTO events(event_name,location,date,details) VALUES
 ('pg session', 'Gaza','2020-12-2','js session here in gaza'),
 ('pg session', 'Gaza','2020-12-2','js session here in gaza');
 
-INSERT INTO attendees (user_id,event_id) VALUES (1,1),
+INSERT INTO attendees (user_id,event_id) VALUES 
+(1,1),
+(2,1),
+(3,1),
 (1,2),
+(2,2),
+(3,2),
 (1,3),
-(2,4),
-(2,5),
-(3,6),
-(3,7);
+(2,3),
+(3,3);
 
 
 COMMIT;

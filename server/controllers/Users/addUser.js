@@ -18,9 +18,9 @@ const addUser = (req, res, next) => {
                 })
             }
         })
-        // .catch((e) => {
-        //     next(e)
-        // })
+        .catch((e) => {
+            next(e)
+        })
 }
 
 module.exports = { addUser }

@@ -22,8 +22,8 @@ const appendChildren = (parent, ...children) => {
   });
 };
 
-const createEventCard = ({ event_name, location, date, details }) => {
-  const card = createHtmlElement("div", "card");
+const createEventCard = ({ event_name, location, date, details },i) => {
+  const card = createHtmlElement("div", "card" , `${i}`);
   const cardImage = createHtmlElement("div", "card-image");
   const img = createHtmlElement("img");
   img.setAttribute("src", "../images/pngegg.png");
@@ -34,7 +34,6 @@ const createEventCard = ({ event_name, location, date, details }) => {
   const titleDateContainer = createHtmlElement("div", "title-date");
   const eventDate = createHtmlElement("span", "event-date");
   eventDate.textContent = date
-  // titleDateContainer.append(eventDate)
   titleDateContainer.append(h3EventTitle)
   cardContent.append(titleDateContainer)
   const pDes = createHtmlElement("p");
@@ -44,12 +43,24 @@ const createEventCard = ({ event_name, location, date, details }) => {
   pDes.textContent = details;
   titleDateContainer.append(h3EventTitle);
   titleDateContainer.append(date);
-  const registerToEvent = createHtmlElement("a", "button");
+  const registerToEvent = createHtmlElement("a", "button",`${i}`);
   registerToEvent.textContent = "Register Now";
   appendChildren(cardContent, pDes, registerToEvent);
   appendChildren(card, cardImage, cardContent);
   cards.append(card);
-  return card;
+  return registerToEvent;
 };
+
+
+
+const listOfNames = (names) => {
+  const ol = createHtmlElement('ol')
+  names.forEach((obj) => {
+    const li = createHtmlElement('li');
+    li.textContent = obj.name;
+    ol.append(li)
+  })
+  return ol;
+}
 
 

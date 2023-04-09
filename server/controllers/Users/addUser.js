@@ -1,15 +1,14 @@
-// const { insertUser } = require('../../db/query/postData')
-const {insertUser} = require('../../db/index')
+const { insertUser } = require('../../db');
 
 const addUser = (req, res, next) => {
     const { username, password } = req.body
     insertUser({ username, password })
-        .then((data) => {
-            if (data) {
+        .then(({rows}) => {
+            if (rows.length > 0) {
                 res.json({
                     status: 201,
                     massage: "the event has been added successfully",
-                    data: data.rows[0]
+                    data: rows[0]
                 })
             } else {
                 res.json({
@@ -23,4 +22,4 @@ const addUser = (req, res, next) => {
         })
 }
 
-module.exports = { addUser }
+module.exports = { addUser };

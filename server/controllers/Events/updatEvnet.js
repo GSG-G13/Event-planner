@@ -1,15 +1,13 @@
-const {updateEvent} = require('../../db/index');
+const {updateEvent} = require('../../db');
 
-const updateEventReq = (req, res) => {
-    let {id, eventName,location, data, details } = req.body  
+const updateEventReq = (req, res, next) => {
+    let { body: {id, eventName,location, data, details }} = req  
     updateEvent({id, eventName,location, data, details })
-    .then((data) => {
-        res.json(data.rows)
+    .then(({rows}) => {
+        res.json(rows)
     })
-    .catch((err) => {
-        res.json({
-            error
-        })
+    .catch((error) => {
+        next(error)
     })
 
 

@@ -1,9 +1,11 @@
-const {getEvents} = require('../../db/index')
+const {getEvents} = require('../../db')
 
-const getAllEvents = (req, res) => {
+const getAllEvents = (req, res, next) => {
   getEvents()
-    .then((data) => res.json(data.rows))
-    .catch(console.log);
+    .then(({rows}) => res.json(rows))
+    .catch((error) => {
+      next(error)
+    });
 };
 
-module.exports = {getAllEvents};
+module.exports = { getAllEvents };

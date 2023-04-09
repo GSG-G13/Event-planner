@@ -1,11 +1,7 @@
 const connection = require('../config/connection');
 
 const getUser = (username) => {
-    const sql = {
-        text: "select * from users where name = ($1)",
-        values: [username]
-    }
-    return connection.query(sql)
+    return connection.query('SELECT * FROM users WHERE name = ($1)',[username])
 }
 
 module.exports = {getUser}

@@ -1,5 +1,6 @@
-const { getAttendees } = require('../../db/index');
-const getAttendee = (req, res) => {
+const { getAttendees } = require('../../db');
+
+const getAttendee = (req, res , next) => {
     const { eventId } = req.body
     getAttendees(eventId)
     .then((result) => {
@@ -8,10 +9,10 @@ const getAttendee = (req, res) => {
         })
     })
     .catch((e) => {
-        res.json({
-            massage : "Enter the Right Event ID"
-        })
-
+        next(e)
+        // res.json({
+        //     massage : "Enter the Right Event ID"
+        // })
     })
 }
 

@@ -4,14 +4,14 @@ DROP TABLE IF EXISTS users, attendees,events;
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
-    password TEXT NOT NULL
+    password VARCHAR(20) NOT NULL
 );
 CREATE TABLE events(
     id SERIAL PRIMARY KEY, 
-    event_name  VARCHAR(255),
-    location VARCHAR(255),
+    event_name  VARCHAR(50),
+    location VARCHAR(100),
     date DATE,
-    details TEXT
+    details VARCHAR(255)
 );
 CREATE TABLE attendees(
     id SERIAL PRIMARY KEY,

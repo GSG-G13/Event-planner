@@ -2,14 +2,14 @@
 const { insertEvent } = require('../../db/index')
 
 const addEvent = (req, res, next) => {
-    const { eventName, location, data, details } = req.body;
+    const { body: { eventName, location, data, details } } = req;
     insertEvent({ eventName, location, data, details })
-        .then((data) => {
-            if (data) {
+        .then(({rows}) => {
+            if (rows.length > 0) {
                 return res.json({
                     status: 201,
                     msg: 'user created successfully',
-                    data: data.rows[0],
+                    data: rows[0],
                 })
             }
             res.json({
